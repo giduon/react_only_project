@@ -32,6 +32,8 @@ export const menuData = [
             { path: '/change_event', label: '체인지 이벤트' },
             { path: '/mouse_event', label: '마우스 이벤트' },
             { path: '/key_event', label: '키보드 이벤트' },
+
+            { path: '/combo_change', label: '콤보 체인지' },
         ]
     },
     // 여기에 5장, 6장 ... 내용을 계속 추가하면 됩니다. 

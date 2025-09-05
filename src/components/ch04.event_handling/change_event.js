@@ -54,7 +54,9 @@ function App(){
             </select>
             <br />
             {/* alt 속성은 해당 이미지가 없을 때 보여주는 글자를 지정하는 속성입니다. */}
-            <img id="image01" src="" alt="NoImage"/>
+            <br />
+
+            <img id="image01" alt="NoImage"/>
 
         </div>
     );     

@@ -3,7 +3,11 @@ function App(){
     const image_large_size = 400;
     const image_path = '/images'; // 이미지 경로 : public 폴더 아래에 images 폴더를 생성합니다.
 
-    const MouseMoveEvent = () => {
+    const MouseMoveEvent = (event) => {
+        const imageSrc = event.target.src;
+        console.log(`현재 이미지 : $({imageSrc})`);
+
+        document.getElementById('large_image').src = imageSrc;
 
     }
     console.log('샘플');
@@ -18,6 +22,7 @@ function App(){
                             <td>
                                 <img src={`${image_path}/french_baguette_01.png`} alt="프렌치 바게트" width={image_small_size} height={image_small_size} onMouseMove={MouseMoveEvent}/>
                             </td>
+                            {/* rowSpan : 행 몇개 병합, colSpan : 열 몇개 병합*/}
                             <td rowSpan= "4" width={image_large_size}>
                                 {/* 여기는 큰 이미지가 들어가는 영역입니다. */}
                                 <img id="large_image" alt="noimage" width={image_large_size} height={image_large_size} />
