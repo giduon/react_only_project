@@ -13,7 +13,7 @@ function App(){
         }else{
             console.log('숫자가 아닙니다.')
         }
-
+'[];[[ㅇㅇ'
     }
     
     return(
