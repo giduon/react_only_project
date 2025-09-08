@@ -34,6 +34,15 @@ export const menuData = [
             { path: '/key_event', label: '키보드 이벤트' },
 
             { path: '/combo_change', label: '콤보 체인지' },
+            { path: '/submit_event', label: '전송 이벤트' },
+        ]
+    },
+    {
+        chapter: "ch05.hooks",
+        items: [
+            { path: '/use_state_01', label: '스테이트 실습 1' },
+            { path: '/use_state_02', label: '스테이트 실습 2' },
+            { path: '/use_state_03', label: '스테이트 실습 3' },
         ]
     },
     // 여기에 5장, 6장 ... 내용을 계속 추가하면 됩니다. 
