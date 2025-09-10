@@ -43,7 +43,19 @@ export const menuData = [
             { path: '/use_state_01', label: '스테이트 실습 1' },
             { path: '/use_state_02', label: '스테이트 실습 2' },
             { path: '/use_state_03', label: '스테이트 실습 3' },
+            { path: '/use_state_04', label: '스테이트 실습 4' },
+            { path: '/use_effect_01', label: '이펙트 실습 1' },
+            { path: '/use_effect_02', label: '이펙트 실습 2' },
+            { path: '/use_effect_03', label: '이펙트 실습 3' },
         ]
     },
+     {
+        chapter: "ch06.IT Cafe",
+        items: [
+            { path: '/coffee_bread_01', label: 'IT Cafe 01' },
+            { path: '/coffee_bread_02', label: 'IT Cafe 02' },
+
+        ]
+    }
     // 여기에 5장, 6장 ... 내용을 계속 추가하면 됩니다. 
 ];

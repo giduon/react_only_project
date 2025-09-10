@@ -8,15 +8,14 @@ function App() {
     const [year, setYear] = useState(2024); // 차량 생산 년도
     const [model, setModel] = useState('avante'); // 차량 모델
     const [image, setImage] = useState('avante'); // 차량 이미지
-    const [comment, setComment] = useState('나름 좋아요.') // 년식에 따른 차량에 대한 코멘트
+    const [comment, setComment] = useState('나름 좋아요.'); // 년식에 따른 차량에 대한 코멘트
     const [modelName, setModelName] = useState('아반떼(avante)'); // 한글 이름과 함께 보여줄 state
 
-
-    // 중첩 배열을 사용한 Map 객체 정의 
+    // 중첩 배열을 사용한 Map 객체 정의
     const carMap = new Map([
         ['avante', '아반떼'],
         ['sonata', '소나타'],
-        ['grandeur', '그랜져']
+        ['grandeur', '그랜져'],
     ]);
 
     const ChangeTest = (event) => {
@@ -27,32 +26,35 @@ function App() {
         console.log('이벤트 타겟 값 : ' + targetValue);
 
         if (targetId === 'model') {
-            // 요기서 이미지 변경하기
             setImage(targetValue);
             setModel(targetValue);
-            
-            //get(key) : key 를 사용하여 해당 요소의 value를 반환 받습니다.
+
+            // get(key) : key를 사용하여 해당 요소의 value를 반환 받습니다.
             const message = `${carMap.get(targetValue)}(${targetValue})`;
             setModelName(message);
 
         } else if (targetId === 'color') {
             setColor(targetValue);
 
-
         } else if (targetId === 'year') {
             setYear(targetValue);
 
             let mycomment = '';
-            
-            if(targetValue === '2025'){
+
+            if (targetValue === '2025') {
                 mycomment = '신차입니다.';
-            }else if(targetValue === '2024'){
-                mycomment = '나름 좋습니다.';
-            }else if(targetValue === '2023'){
-                mycomment = '구형입니다.';
-            }else{
+
+            } else if (targetValue === '2024') {
+                mycomment = '나름 좋아요.';
+
+            } else if (targetValue === '2023') {
+                mycomment = '구형차입니다.';
+
+            } else {
+
             }
             setComment(mycomment);
+
         } else {
 
         }
@@ -92,13 +94,13 @@ function App() {
             <br /><br />
 
             <p>
-                <span style={{color:color, fontWeight : 'bolder'}}>{color}</span> 색상의 {year} 년산 {modelName} 모델<br />
+                <span style={{ color: color, fontWeight: 'bolder' }}>{color}</span> 색상의 {year} 년산 {modelName} 모델<br />
                 <br />
                 {comment}
             </p>
             <br /><br />
 
-            <img src= {`/images/${image}.png`} alt="" width={imageSize} height={imageSize} />
+            <img src={`/images/${image}.png`} alt="" width={imageSize} height={imageSize} />
         </div>
     );
 }

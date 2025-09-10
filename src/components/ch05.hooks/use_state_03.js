@@ -3,21 +3,22 @@ import { useState } from "react";
 function App() {
     const imageSize = 120; // 이미지 사이즈
 
-     /* 관리해야 할 상태(state) 개수가 많으면 객체 형식으로 정의하는 것이 유리힙니다. */
+    /* 관리해야 할 상태(state) 개수가 많으면 객체 형식으로 정의하는 것이 유리합니다. */
     const [car, setCar] = useState({
         color: 'blue',
-        year : 2024,
-        model : 'avante',
-        image : 'avante',
-        comment : '나름 좋아요.',
-        modelName : '아반떼(avante)'
+        year: 2024,
+        model: 'avante',
+        image: 'avante',
+        comment: '나름 좋아요.',
+        modelName: '아반떼(avante)'
     });
 
-    // 중첩 배열을 사용한 Map 객체 정의 
+
+    // 중첩 배열을 사용한 Map 객체 정의
     const carMap = new Map([
         ['avante', '아반떼'],
         ['sonata', '소나타'],
-        ['grandeur', '그랜져']
+        ['grandeur', '그랜져'],
     ]);
 
     const ChangeTest = (event) => {
@@ -28,31 +29,28 @@ function App() {
         console.log('이벤트 타겟 값 : ' + targetValue);
 
         if (targetId === 'model') {
-            //get(key) : key 를 사용하여 해당 요소의 value를 반환 받습니다.
+            // get(key) : key를 사용하여 해당 요소의 value를 반환 받습니다.
             const message = `${carMap.get(targetValue)}(${targetValue})`;
-            setCar({...car, image:targetValue, model:targetValue, modelName:message})
+            setCar({ ...car, image: targetValue, model: targetValue, modelName: message });
 
         } else if (targetId === 'color') {
-            /* 전개 연산자 ...car를 사용하여 color 이외의 모든 데이트를 보존합니다. */
-            setCar({...car, color:targetValue});
-
+            /* 전개 연산자 ...car를 사용하여 color 이외의 모든 데이터를 보존합니다. */
+            setCar({ ...car, color: targetValue });
 
         } else if (targetId === 'year') {
             let mycomment = '';
-            if(targetValue === '2025'){
+            if (targetValue === '2025') {
                 mycomment = '신차입니다.';
-            }else if(targetValue === '2024'){
-                mycomment = '나름 좋습니다.';
-            }else if(targetValue === '2023'){
-                mycomment = '구형입니다.';
-            } else{
+            } else if (targetValue === '2024') {
+                mycomment = '나름 좋아요.';
+            } else if (targetValue === '2023') {
+                mycomment = '구형차입니다.';
+            } else {
             }
-            setCar({...car, year:targetValue, comment:mycomment});
-
+            setCar({ ...car, year: targetValue, comment: mycomment });
         } else {
 
         }
-
     }
 
     return (
@@ -89,14 +87,14 @@ function App() {
             <br /><br />
 
             <p>
-                <span style={{color:car.color, fontWeight : 'bolder'}}>{car.color}</span> 
+                <span style={{ color: car.color, fontWeight: 'bolder' }}>{car.color}</span>
                 색상의 {car.year} 년산 {car.modelName} 모델<br />
                 <br />
                 {car.comment}
             </p>
             <br /><br />
 
-            <img src= {`/images/${car.image}.png`} alt="" width={imageSize} height={imageSize} />
+            <img src={`/images/${car.image}.png`} alt="" width={imageSize} height={imageSize} />
         </div>
     );
 }
