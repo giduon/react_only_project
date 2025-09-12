@@ -71,9 +71,20 @@ function App(){
 
         setMode('read'); // 읽기 모드로 변경
     }
+
+    //전체 상품에서 지정한 id 상품만 배제하고, 나머지를 반환해 줍니다.
+    const getExceptData = (id) => {
+        return products.filter((item) => item.id !== id);
+    }
    
     /* 사용자가 상품 수정 화면에서 내용을 수정하고, [수정] 버튼을 눌렀습니다. */
     const UpdateData = (formData) => {
+        // 수정된 상품을 제외하고, 나머지 추출
+        const anotherProduct = getExceptData(formData.id);
+        // 추출된 상품 목록과 수정된 상품 합치기
+        const newProductList = anotherProduct.concat(formData); // concat은 문자열 결합
+        setProducts(newProductList); // 상품 업데이트
+        setMode('read');
 
     }
     
