@@ -3,6 +3,17 @@
 // npm install react-router-dom 엔터
 import { Routes, Route } from 'react-router-dom';
 
+
+// ch01 장
+import AppMakeArray01 from './../components/ch01.react_basic/make_array_01';
+import AppMathObject01 from './../components/ch01.react_basic/math_object_01';
+import AppIfExercise from './../components/ch01.react_basic/if_exercise';
+import AppSwitchExercise from './../components/ch01.react_basic/switch_exercise';
+import AppTypeOfNumber from './../components/ch01.react_basic/typeof_number';
+import AppFormExam from './../components/ch01.react_basic/form_exam';
+import AppListExam from './../components/ch01.react_basic/list_exam';
+import AppTableExam from './../components/ch01.react_basic/table_exam';
+
 // ch02 장
 // 기호 .는 현재 폴더, .. 는 상위 폴더, /는 폴더 구분자
 // import 앱이름 from '전체경로/파일명'
@@ -47,6 +58,8 @@ import AppCafe02 from './../components/ch06.bootstrap/coffee_bread_02/main';
 import AppCafe03 from './../components/ch06.bootstrap/coffee_bread_03/main';
 import AppCafe04 from './../components/ch06.bootstrap/coffee_bread_04/main';
 import AppCafe05 from './../components/ch06.bootstrap/coffee_bread_05/main';
+import AppCafe06 from './../components/ch06.bootstrap/coffee_bread_06/main';
+import AppCafe07 from './../components/ch06.bootstrap/coffee_bread_07/main';
 
 
 
@@ -54,6 +67,16 @@ function AppRoutes() {
     return (
         <Routes>
             {/* element 속성에는 컴포넌트 자체가 아니라 JSX 요소를 넣어야 합니다. */}
+        {/* 제01장 */}
+            <Route path='/make_array_01' element={<AppMakeArray01 />} />
+            <Route path='/math_object_01' element={<AppMathObject01 />} />
+            <Route path='/if_exercise' element={<AppIfExercise />} />
+            <Route path='/switch_exercise' element={<AppSwitchExercise />} />
+            <Route path='/typeof_number' element={<AppTypeOfNumber />} />
+            <Route path='/form_exam' element={<AppFormExam />} />
+            <Route path='/list_exam' element={<AppListExam />} />
+            <Route path='/table_exam' element={<AppTableExam />} />
+
             <Route path='/' element={<AppLetConst />} />
             <Route path='/let_const' element={<AppLetConst />} />
             <Route path='/template_string' element={<AppTemplateString />} />
@@ -92,6 +115,8 @@ function AppRoutes() {
             <Route path='/coffee_bread_03' element={<AppCafe03 />} />
             <Route path='/coffee_bread_04' element={<AppCafe04 />} />
             <Route path='/coffee_bread_05' element={<AppCafe05 />} />
+            <Route path='/coffee_bread_06' element={<AppCafe06 />} />
+            <Route path='/coffee_bread_07' element={<AppCafe07 />} />
 
         </Routes>
     );
